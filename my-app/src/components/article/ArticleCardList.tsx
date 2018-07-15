@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {getArticles} from "../../common/state/articles/action";
+import { getArticles } from "../../common/state/articles/action";
 
 type ArticleCardListState = {
     articles
@@ -11,17 +11,23 @@ class ArticleCardList extends React.Component<{},ArticleCardListState>{
     }
 
     public componentDidMount() {
-        this.setState({
-            articles: getArticles()
-        })
+        getArticles()
+            .then(res => {
+                this.setState({
+                    articles: res.data
+                })
+            })
+            .catch(err => err.message);
     }
 
     public render() {
         const { articles } = this.state;
         if(articles && articles.length < 1) return null;
-        debugger;
-        return articles.map((item, i) => {
-            return <li key={i}>Test</li>
+        return articles.map((item) => {
+            return <div key={item._id.$oid}>
+                <p>{ item.place }</p>
+                <p>{ item.user }</p>
+            </div>
         })
     }
 }

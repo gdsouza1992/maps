@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-export async function getArticles() {
-    const res = await axios('http://blogit-demo.westus2.cloudapp.azure.com:7777/getAll');
-    return await res.data;
+export function getArticles() {
+    return axios.get('http://blogit-demo.westus2.cloudapp.azure.com:7777/getAll');
 }

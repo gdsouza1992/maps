@@ -4,6 +4,8 @@ import Header from './components/common/Header';
 
 import './App.css';
 import Home from "./components/home/Home";
+import Signin from "./components/signin/Signin";
+import Signup from "./components/signup/Signup";
 
 const Article = ( routeProps ) => {
     const { match } = routeProps;
@@ -29,6 +31,8 @@ class App extends React.Component {
                     <Switch>
                         <Redirect exact={true} from="/" to="/home"/>
                         <Route path="/home" component={Home}/>
+                        <Route path="/signin" component={Signin}/>
+                        <Route path="/signup" component={Signup}/>
                         <Route path="/article/:id" component={Article}/>
                         <Route component={Error}/>
                     </Switch>
