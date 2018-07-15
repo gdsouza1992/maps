@@ -7,7 +7,7 @@ const Home = () => {
         <section>
             <section>MAP GOES HERE</section>
             <section>
-                <ArticleCardList initalCount={5}/>
+                <ArticleCardList/>
             </section>
         </section>
     );

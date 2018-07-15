@@ -1,18 +1,29 @@
 import * as React from 'react';
-import ArticleCard from "./ArticleCard";
+import {getArticles} from "../../common/state/articles/action";
 
-const ArticleCardList = (props) => {
-    // const { count } = props;
-    return (
-        <div>
-            <ArticleCard />
-            <ArticleCard />
-            <ArticleCard />
-            <ArticleCard />
-            <ArticleCard />
-        </div>
-    );
+type ArticleCardListState = {
+    articles
 }
 
+class ArticleCardList extends React.Component<{},ArticleCardListState>{
+    public state: ArticleCardListState = {
+        articles: []
+    }
+
+    public componentDidMount() {
+        this.setState({
+            articles: getArticles()
+        })
+    }
+
+    public render() {
+        const { articles } = this.state;
+        if(articles && articles.length < 1) return null;
+        debugger;
+        return articles.map((item, i) => {
+            return <li key={i}>Test</li>
+        })
+    }
+}
 
 export default ArticleCardList;

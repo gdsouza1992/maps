@@ -5,5 +5,10 @@
       "config/**/*.js",
       "node_modules/**/*.ts"
     ]
+  },
+  "rules": {
+    "interface-over-type-literal": false,
+    "curly": [true, "ignore-same-line"],
+    "no-debugger": false
   }
 }
