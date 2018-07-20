@@ -1,7 +1,9 @@
 How to run the React App
+- Navigate to the app directory     
+`cd maps/my-app`
     
-    `cd maps/my-app`
+- Install the packages    
+`yarn`
     
-    `yarn`
-    
-    `yarn s`
+- Start the app    
+`yarn s`
