@@ -1,0 +1,10 @@
+export const Expressions = {
+    'EMAIL': /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+};
+
+export default abstract class Regex {
+
+    public static test(regex: RegExp, input: string): boolean {
+      return regex.test(input);
+    }
+}

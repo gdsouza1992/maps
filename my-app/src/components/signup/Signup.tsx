@@ -19,7 +19,7 @@ class Signup extends React.Component<{}, SignupState> {
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Email:
-                    <input name="email" type="text" value={this.state.email} onChange={this.handleChange} />
+                    <input name="email" type="email" value={this.state.email} onChange={this.handleChange} />
                 </label>
                 <label>
                     Username:
@@ -27,7 +27,7 @@ class Signup extends React.Component<{}, SignupState> {
                 </label>
                 <label>
                     Password:
-                    <input name="password" type="text" value={this.state.password} onChange={this.handleChange} />
+                    <input name="password" type="password" value={this.state.password} onChange={this.handleChange} />
                 </label>
                 <input type="submit" value="Submit" />
             </form>
@@ -57,10 +57,8 @@ class Signup extends React.Component<{}, SignupState> {
         signup(email, username, password)
             .then(res => {
                 console.log(res.data)
-                debugger;
             })
             .catch(err => {
-                debugger;
                 console.log(err.response.data.message)
             });
         event.preventDefault();
