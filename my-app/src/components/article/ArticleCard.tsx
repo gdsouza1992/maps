@@ -1,10 +1,10 @@
 import * as React from 'react';
-import ProfileCard from "../common/ProfileCard";
+import Index from "../common/ProfileCard/index";
 
 const ArticleCard = () => {
     return (
         <div>
-            <ProfileCard />
+            <Index />
         </div>
     );
 }

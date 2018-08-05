@@ -1,33 +1,21 @@
 import * as React from 'react';
-import { getArticles } from "../../common/state/articles/action";
+import { Article } from "../../types/Article";
 
-type ArticleCardListState = {
-    articles
+type ArticleCardListProps = {
+    articles: Article[]
 }
 
-class ArticleCardList extends React.Component<{},ArticleCardListState>{
-    public state: ArticleCardListState = {
-        articles: []
-    }
-
-    public componentDidMount() {
-        getArticles()
-            .then(res => {
-                this.setState({
-                    articles: res.data
-                })
-            })
-            .catch(err => err.message);
-    }
-
+class ArticleCardList extends React.Component<ArticleCardListProps, {}>{
     public render() {
-        const { articles } = this.state;
+        const { articles } = this.props;
         if(articles && articles.length < 1) return null;
-        return articles.map((item) => {
-            return <div key={item._id.$oid}>
-                <p>{ item.place }</p>
-                <p>{ item.user }</p>
-            </div>
+        return articles.map((item: Article) => {
+            return <li key={item.id}>
+                <div>
+                    <p>{ item.summary }</p>
+                    <p>{ item.content }</p>
+                </div>
+            </li>
         })
     }
 }

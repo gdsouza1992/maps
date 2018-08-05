@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-const ROOT_URL = 'http://0.0.0.0:7777';
+// const ROOT_URL = 'http://0.0.0.0:7777';
+const ROOT_URL = 'http://blogit-demo.westus2.cloudapp.azure.com:7777';
 
-export type BaseResource = 'signin' | 'signup'
+export type BaseResource = 'signin' | 'signup' | 'articles'
 
 export type ApiQuery = {
     path?: string;
@@ -68,6 +69,15 @@ export const makeError = (error) : ClientError => {
         postReqData = JSON.parse(error.response.config.data)
     } catch (e) {
         postReqData = {}
+    }
+
+    if(!error.response){
+        return {
+            status: {
+                code: 400,
+                text: 'Client Error'
+            }
+        };
     }
 
     const errorData: ClientError = {

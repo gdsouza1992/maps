@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import Header from './components/common/Header';
 
-import './App.css';
+import './App.scss';
+
+import Articles from "./components/articles";
+import Header from './components/common/header/index';
+import Notification from "./components/common/Notification";
 import Home from "./components/home/Home";
 import Signin from "./components/signin/Signin";
 import Signup from "./components/signup/Signup";
@@ -19,6 +22,7 @@ const Article = ( routeProps ) => {
 const Error = () => (
     <div>
         <h3>404 - Page not found</h3>
+        <Notification message={"Hello devs... you are doing a fine job!"}/>
     </div>
 );
 
@@ -34,6 +38,7 @@ class App extends React.Component {
                         <Route path="/signin" component={Signin}/>
                         <Route path="/signup" component={Signup}/>
                         <Route path="/article/:id" component={Article}/>
+                        <Route path="/articles" component={Articles}/>
                         <Route component={Error}/>
                     </Switch>
                 </>

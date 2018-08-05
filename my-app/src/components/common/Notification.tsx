@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 import * as React from 'react';
 
 export enum NotificationType {
@@ -45,4 +47,5 @@ Notification.defaultProps = {
     message: '',
     notificationType: NotificationType.INFO
 }
+
 export default Notification;

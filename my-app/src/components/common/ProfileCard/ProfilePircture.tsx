@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PlaceHolder from "./PlaceHolder";
+import PlaceHolder from "../PlaceHolder";
 
 const ProfilePicture = () => {
     const imageSrc = null;
