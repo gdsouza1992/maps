@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {signup} from "../../common/state/user/action";
+import { SignUp } from "../../common/state/user/action";
 
 type SignupState = {
     email: string,
@@ -50,17 +50,9 @@ class Signup extends React.Component<{}, SignupState> {
         }
     }
 
-
     private handleSubmit = (event) => {
-        // alert(`This was submitted ${this.state.email} with ${this.state.username} with ${this.state.password}`);
         const { email, username, password } = this.state;
-        signup(email, username, password)
-            .then(res => {
-                console.log(res.data)
-            })
-            .catch(err => {
-                console.log(err.response.data.message)
-            });
+        SignUp(email, username, password)
         event.preventDefault();
     }
 }

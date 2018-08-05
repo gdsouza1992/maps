@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Regex, { Expressions } from '../../common/utils/regex';
+import { SignIn } from "../../common/state/user/action";
 
 type SigninState = {
     password: string
@@ -42,10 +42,9 @@ class Signin extends React.Component<{}, SigninState> {
     }
 
     private handleSubmit = (event) => {
-        const error = 'Wrong email format';
-        const message = `This was submitted ${this.state.username} with ${this.state.password}`;
-        Regex.test(Expressions.EMAIL, this.state.username) ? alert(message) : alert(error);
         event.preventDefault();
+        const { username, password } = this.state;
+        SignIn(username, password)
     }
 }
 
