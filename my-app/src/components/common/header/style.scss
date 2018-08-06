@@ -1,5 +1,16 @@
+@import "../../../scss/colors.scss";
+@import "../../../scss/variables.scss";
+
 .header {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    background-color: $primary-color;
+    color: $primary-color-text;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
     h3 {
-        color: red;
+        color: $primary-color-text;
+        line-height: $header-height;
     }
 }

@@ -5,8 +5,8 @@ import './style.css';
 
 const Header = () => {
     return (
-        <header className="header">
-            <h3>Header text goes here</h3>
+        <header className="layout-wrapper header">
+            <h3>Blog it!</h3>
             <ProfileCard />
         </header>
     );

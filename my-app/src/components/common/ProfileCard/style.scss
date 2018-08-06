@@ -1,11 +1,19 @@
+@import "../../../scss/colors.scss";
+@import "../../../scss/variables.scss";
+
 .profile-card {
+  display: grid;
+  grid-column-start: -1;
+  grid-template-columns: 100px $header-height;
+
   img {
-    height: 2.5em;
+    height: $header-height;
     width: auto;
     border-radius: 50%;
+    border: 2px solid $primary-color-dark;
   }
 
-  span {
-
+  div {
+    line-height: $header-height;
   }
 }

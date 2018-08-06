@@ -2,7 +2,7 @@ import * as React from 'react';
 
 const ProfileLabel = () => {
     return (
-        <span>Profile Name</span>
+        <div>Profile Name</div>
     );
 }
 
