@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { GetArticles } from '../../common/state/articles/action';
-import { Article } from "../../types/Article";
+import { Article } from "../../types/models/Article";
 import ArticleCardList from "../article/ArticleCardList";
 
 

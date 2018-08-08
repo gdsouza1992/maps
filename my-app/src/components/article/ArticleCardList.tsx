@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Article } from "../../types/Article";
+import { Article } from "../../types/models/Article";
 
 type ArticleCardListProps = {
     articles: Article[]

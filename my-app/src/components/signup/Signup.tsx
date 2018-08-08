@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SignUp } from "../../common/state/user/action";
+import { SignUp } from "../../common/state/account/action";
 
 type SignupState = {
     email: string,

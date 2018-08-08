@@ -1,5 +1,5 @@
 import { mockArticleData } from "../../../mockData/articles";
-import { Article, JSONtoArticle } from "../../../types/Article";
+import { Article, JSONtoArticle } from "../../../types/models/Article";
 import { ApiQuery, get, makeError } from "../../utils/api";
 
 export const GetArticles = () => {

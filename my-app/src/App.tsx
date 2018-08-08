@@ -48,6 +48,8 @@ class App extends React.Component {
                         <Route path="/signin" component={Signin}/>
                         <Route path="/signup" component={Signup}/>
                         <Route path="/articles" component={Articles}/>
+
+
                         <Route component={Error}/>
                     </Switch>
                 </>
